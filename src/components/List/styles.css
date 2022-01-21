@@ -1,0 +1,32 @@
+.list-principal {
+    margin-bottom: 30px;
+}
+
+.list-principal h2 {
+    margin: 0 0 0 30px; 
+}
+
+.list-area {
+    overflow-x: hidden; /* pra cortar a lista que passar da tela*/
+    padding-left: 30px;
+}
+
+.list-row{
+    width: 99999999999999999999999999999999px;
+}
+
+.list-item {
+    display: inline-block; /*pra uma imagem ficar do lado da outra*/
+    width: 150px;
+}
+
+.list-item img {
+    width: 100%;
+    transform: scale(0.9); /* pra diminuir 10% da area da tela*/
+    transition: all ease 0.3s;
+    cursor: pointer;
+}
+
+.list-item img:hover{
+    transform: scale(1); /*efeito da imagem aumentar*/
+}
