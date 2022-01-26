@@ -1,16 +1,17 @@
 import React, { useEffect, useState } from "react";
 import Tmdb from "./Tmdb.js";
 import List from "./components/List/index.js";
-import FilmeDestaque from "./components/FilmeDestaque/index.js"
+import FilmeDestaque from "./components/FilmeDestaque/index.js";
+import Header from "./components/Header/index.js";
 import "./App.css";
 
 // eslint-disable-next-line import/no-anonymous-default-export
 export default () => {
   const [movieList, setMovieList] = useState([]);
   const [featuredData, setFeatureData] = useState(null);
+  const [blackHeader, setBlackReader] = useState(false);
 
   useEffect(() => {
-
     const loadAll = async () => {
       //pegando a lista total
       let list = await Tmdb.getHomeList(); // metodo para fazer a requisicao
@@ -28,8 +29,28 @@ export default () => {
     loadAll();
   }, []);
 
+  useEffect(() => {
+    const scrollListener = () => {  // pra monitorar o scroll da pagina
+      if(window.scrollY > 10){
+        setBlackReader(true);
+      }else{
+        setBlackReader(false);
+      }
+
+    }
+
+    window.addEventListener('scroll', scrollListener);
+    
+    return () => {
+      window.removeEventListener('scroll', scrollListener);
+    }
+
+  }, []);
+
   return (
+
     <div className="page">
+      <Header black={blackHeader}/>
       {
         featuredData &&
         <FilmeDestaque item={featuredData} />
