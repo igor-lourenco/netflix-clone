@@ -12,7 +12,7 @@
 }
 
 .list-row{
-    width: 99999999999999999999999999999999px;
+    transition: all ease 0.5s;
 }
 
 .list-item {
@@ -29,4 +29,33 @@
 
 .list-item img:hover{
     transform: scale(1); /*efeito da imagem aumentar*/
+}
+
+.list-icon-left, .list-icon-right {
+    position: absolute;
+    font-size: 10px;
+    width: 30px;
+    height: 205px;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 99;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    cursor: pointer;
+    opacity: 0;
+    margin-top: 10px;
+    transition: all ease 0.5s;
+}
+
+.list-icon-left {
+    left: 0;
+}
+
+.list-icon-right{
+    right: 0;
+}
+
+.list-principal:hover .list-icon-left, .list-principal:hover .list-icon-right{
+    opacity: 1;
 }
