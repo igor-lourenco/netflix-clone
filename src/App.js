@@ -23,24 +23,19 @@ export default () => {
       let filmeEscolhido = originals[0].items.results[random];  //pega o filme de acordo com numero aleatorio gerado
       let info = await Tmdb.getMovieInfo(filmeEscolhido.id, "tv"); //pega mais informações sobre o filme escolhido
       setFeatureData(info);
-
-      console.log(info);
     }
     loadAll();
   }, []);
 
   useEffect(() => {
     const scrollListener = () => {  // pra monitorar o scroll da pagina
-      if(window.scrollY > 10){
+      if (window.scrollY > 10) {
         setBlackReader(true);
-      }else{
+      } else {
         setBlackReader(false);
       }
-
     }
-
     window.addEventListener('scroll', scrollListener);
-    
     return () => {
       window.removeEventListener('scroll', scrollListener);
     }
@@ -50,7 +45,7 @@ export default () => {
   return (
 
     <div className="page">
-      <Header black={blackHeader}/>
+      <Header black={blackHeader} />
       {
         featuredData &&
         <FilmeDestaque item={featuredData} />
@@ -60,6 +55,12 @@ export default () => {
           <List key={key} title={item.title} items={item.items} />
         ))}
       </section>
+
+      <footer>
+        Feito Por Igor Lourenço<br />
+        Direitos de imagem para Netflix<br />
+        Dados pegos do site TheMoviedb.org
+      </footer>
 
     </div>
   );
