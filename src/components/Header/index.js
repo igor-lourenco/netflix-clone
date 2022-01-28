@@ -12,11 +12,11 @@ export default ({black}) => {
                     <img src= {NetflixLogo} alt="logo-netflix"/>
                 </a>
                 <div className="header-cabecalho">
-                    <p>Início</p>
-                    <p>Séries</p>
-                    <p>Filmes</p>
-                    <p>Bombando</p>
-                    <p>Minha Lista</p>
+                    <p className="header-opcoes">Início</p>
+                    <p className="header-opcoes">Séries</p>
+                    <p className="header-opcoes">Filmes</p>
+                    <p className="header-opcoes">Bombando</p>
+                    <p className="header-opcoes">Minha Lista</p>
                 </div>
             </div>
             <div className="header-avatar">

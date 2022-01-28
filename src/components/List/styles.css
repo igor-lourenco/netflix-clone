@@ -59,3 +59,9 @@
 .list-principal:hover .list-icon-left, .list-principal:hover .list-icon-right{
     opacity: 1;
 }
+
+@media(max-width: 760px){
+    .list-icon-left, .list-icon-right{
+        opacity: 1;
+    }    
+}
