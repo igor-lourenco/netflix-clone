@@ -1,6 +1,6 @@
 # Netflix clone
 
- - Demo: https://netflix-igor.netlify.app/
+ - Demo: https://igor-clone.netlify.app/
  
 Este projeto é um clone de front-end simplificado da Netflix. Foi criado com React e javascript. Ele usa a API externa MovieDB para pegar os dados da aplicação. Fique a vontade para contribuir!
 
